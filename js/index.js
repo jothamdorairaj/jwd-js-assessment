@@ -40,8 +40,18 @@ window.addEventListener('DOMContentLoaded', () => {
       a: 3,
     },
     {
-      q: 'What is the capital of Australia',
+      q: 'What is the capital of Australia?',
       o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
+      a: 1,
+    },
+    {
+      q: 'What did Jack Dorsey, Noah Glass, Biz Stone, and Evan Williams collectively create?',
+      o: ['instagram', 'facebook', 'twitter', 'bebo'],
+      a: 2,
+    },
+    {
+      q: 'Who painted the Mona Lisa?',
+      o: ['some bloke', 'Leonardo da Vinci', 'Banksy', 'your highschool art teacher'],
       a: 1,
     },
   ];
