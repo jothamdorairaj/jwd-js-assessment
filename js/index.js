@@ -25,6 +25,11 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
   });
+  const submitButton = document.querySelector('#btnSubmit')
+    submitButton.addEventListener('click', function(){
+      calculateScore();
+
+    });
   // quizArray QUESTIONS & ANSWERS
   // q = QUESTION, o = OPTIONS, a = CORRECT ANSWER
   // Basic ideas from https://code-boxx.com/simple-javascript-quiz/
@@ -75,10 +80,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Calculate the score
   const calculateScore = () => {
+    
     let score = 0;
     quizArray.map((quizItem, index) => {
       for (let i = 0; i < 4; i++) {
-        //highlight the li if it is the correct answer
+        
         let li = `li_${index}_${i}`;
         let r = `radio_${index}_${i}`;
         liElement = document.querySelector('#' + li);
@@ -86,14 +92,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (quizItem.a == i) {
           //change background color of li element here
+          liElement.style.backgroundColor = 'green';
         }
 
         if (radioElement.checked) {
-          // code for task 1 goes here
+          score++;
+          
         }
       }
     });
+    const scoreSpan = document.querySelector('#score');
+    scoreSpan.innerHTML="YOUR SCORE: "+"<span style='color:green'>"+score+"</span>";    
   };
+  
+  
 
   // call the displayQuiz function
   displayQuiz();
